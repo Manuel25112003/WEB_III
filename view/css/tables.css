@@ -1,0 +1,76 @@
+/* * tables.css — Optimizado para Panel de Empleados 2026
+ */
+
+.tabla-scroll {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin-top: 1rem;
+    border: 1px solid var(--bg-borde, #e2e8f0);
+}
+
+.tabla-empleados {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+/* Encabezados */
+.tabla-empleados thead tr {
+    background: #ffffff;
+}
+
+.tabla-empleados th {
+    padding: 1.2rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #000000;
+    text-align: left;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+/* Celdas y Filas */
+.tabla-empleados tbody tr {
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.2s;
+}
+
+.tabla-empleados tbody tr:hover {
+    background: #f8fafc;
+}
+
+.tabla-empleados td {
+    padding: 1rem;
+    font-size: 0.9rem;
+    vertical-align: middle;
+    color: #334155;
+}
+
+/* Estilo específico para Nombre (Negrita) */
+.col-nombre {
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+}
+
+/* Etiquetas de Cargo (Pills) */
+.etiqueta {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #94a3b8;
+    color: #64748b;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.7rem;
+    border-radius: 20px;
+    line-height: 1;
+    text-align: center;
+}
+
+/* Ajuste para acciones */
+.td-acciones {
+    text-align: right;
+    white-space: nowrap;
+}

@@ -1,0 +1,80 @@
+/*
+ * messages.css — Alertas y vacíos
+ */
+
+.vacio {
+    text-align: center;
+    padding: 4rem 2rem;
+    border: 1px dashed var(--bg-borde);
+    background: var(--bg-card);
+    border-radius: 6px;
+}
+
+.vacio-icono {
+    font-size: 2.5rem;
+    color: var(--txt-claro);
+    margin-bottom: 1rem;
+}
+
+.vacio h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--txt-oscuro);
+    margin: 0 0 0.5rem 0;
+}
+
+.vacio p {
+    color: var(--txt-medio);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.msg-inicial, .msg-vacio {
+    padding: 2rem;
+    border: 1px solid var(--bg-borde);
+    background: var(--bg-card);
+    margin-bottom: 2rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.msg-inicial p, .msg-vacio p {
+    color: var(--txt-medio);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.mark--naranja {
+    background: rgba(245, 158, 11, 0.18);
+    color: var(--naranja);
+    padding: 0 0.2rem;
+    border-radius: 3px;
+}
+
+.alerta-bd {
+    background: rgba(242, 139, 130, 0.1);
+    border: 1px solid var(--error-color);
+    color: var(--error-color);
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    border-radius: 6px;
+}
+
+.alerta-bd h6 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+}
+
+.alerta-bd ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    color: var(--txt-oscuro);
+}
+
+mark {
+    background: rgba(232, 234, 237, 0.15);
+    color: var(--txt-oscuro);
+    padding: 0 0.2rem;
+    border-radius: 3px;
+}

@@ -1,0 +1,172 @@
+/*
+ * buttons.css — Botones 
+ * Rediseño: Bordes rectos, colores más amables
+ */
+
+.btn-base {
+    border: 1px solid transparent;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-block;
+    border-radius: 4px; /* Un redondeo súper ligero para que no sea tan agresivo */
+}
+
+.btn-volver {
+    background: transparent;
+    color: var(--txt-medio);
+    border: 1px solid var(--bg-borde);
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: 0.2s;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.btn-volver:hover {
+    background: var(--bg-hover);
+    color: var(--txt-oscuro);
+    border-color: var(--txt-claro);
+}
+
+.btn-nuevo {
+    background: var(--btn-nuevo);
+    color: var(--bg-fondo); /* Texto oscuro sobre botón claro */
+    border: 1px solid var(--btn-nuevo);
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.btn-nuevo:hover {
+    background: var(--btn-nuevo-h);
+}
+
+.btn-editar {
+    background: var(--btn-editar);
+    color: var(--bg-fondo);
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    text-decoration: none;
+    transition: 0.2s;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.btn-editar:hover { background: var(--btn-editar-h); }
+
+.btn-eliminar {
+    background: transparent;
+    color: var(--btn-eliminar);
+    border: 1px solid var(--btn-eliminar);
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    text-decoration: none;
+    transition: 0.2s;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.btn-eliminar:hover {
+    background: var(--btn-eliminar);
+    color: var(--bg-fondo);
+}
+
+.btn-activar {
+    background: transparent;
+    color: var(--txt-oscuro);
+    border: 1px solid var(--txt-oscuro);
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    text-decoration: none;
+    transition: 0.2s;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.btn-activar:hover {
+    background: var(--txt-oscuro);
+    color: var(--bg-fondo);
+}
+
+.btn-guardar {
+    width: 100%;
+    background: var(--btn-guardar);
+    color: var(--bg-fondo);
+    border: none;
+    padding: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.btn-guardar:hover { background: var(--btn-guardar-h); }
+
+.btn-principal {
+    display: inline-block;
+    background: var(--bg-borde);
+    color: var(--txt-oscuro);
+    border: none;
+    padding: 0.8rem 2.5rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: 0.2s;
+    border-radius: 4px;
+}
+
+.btn-principal:hover { background: var(--txt-claro); color: var(--bg-fondo); }
+
+/* Botones del Dashboard */
+.btn-panel {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1.5rem;
+    border: 1px solid var(--bg-borde);
+    background: var(--bg-card);
+    color: var(--txt-oscuro);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: 0.2s;
+    border-radius: 6px;
+}
+
+.btn-panel:hover {
+    background: var(--bg-hover);
+    border-color: var(--txt-claro);
+}
+
+.btn-panel .icono {
+    font-size: 1.5rem;
+    color: var(--txt-claro);
+}
+
+.btn-activo:hover .icono { color: var(--btn-nuevo); }
+.btn-inactivo:hover .icono { color: var(--naranja); }
+.btn-buscar:hover .icono { color: var(--btn-editar); }
+
+.btn-panel .etiqueta {
+    font-size: 0.85rem;
+    color: var(--txt-claro);
+    display: block;
+    margin-top: 0.3rem;
+    font-weight: normal;
+}
+
+.btn-panel .flecha { display: none; }

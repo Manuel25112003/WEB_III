@@ -1,0 +1,68 @@
+/*
+ * base.css — Variables globales, reset y tipografia
+ * Estilo: Sky Light (Azul claro, limpio y profesional)
+ */
+
+:root {
+    /* Fondos claros y celestes */
+    --bg-fondo:      #f0f9ff;   /* Azul cielo muy claro (Sky 50) */
+    --bg-card:       #ffffff;   /* Blanco puro para las tarjetas */
+    --bg-panel:      #ffffff;   
+    --bg-borde:      #e0f2fe;   /* Azul claro para bordes (Sky 100) */
+    --bg-hover:      #f8fafc;   /* Gris azulado muy tenue para interacciones */
+
+    /* Texto (Optimizado para fondos claros) */
+    --txt-oscuro:    #0c4a6e;   /* Azul marino oscuro para títulos (Sky 900) */
+    --txt-medio:     #334155;   /* Pizarra para texto principal (Slate 700) */
+    --txt-claro:     #64748b;   /* Gris azulado para texto secundario (Slate 500) */
+
+    /* Acciones (Azules vibrantes y contrastes) */
+    --btn-editar:    #0284c7;   /* Azul oceánico */
+    --btn-editar-h:  #0369a1;
+    --btn-eliminar:  #f43f5e;   /* Rosa/Rojo para destacar */
+    --btn-eliminar-h:#e11d48;
+    --btn-nuevo:     #0ea5e9;   /* Azul cielo brillante */
+    --btn-nuevo-h:   #0284c7;
+    --btn-guardar:   #10b981;   /* Verde esmeralda para éxito */
+    --btn-guardar-h: #059669;
+
+    /* Acentos */
+    --naranja:       #f59e0b;   /* Ámbar para alertas/inactivos */
+    --naranja-h:     #d97706;
+
+    /* Errores */
+    --error-color:   #e11d48;
+    --error-bg:      #fff1f2;
+}
+
+/* -- Reset & Tipografía -- */
+* { box-sizing: border-box; }
+
+body {
+    /* =========================================================
+       FONDO AZUL CLARO CON IMAGEN
+       ========================================================= */
+    background-color: var(--bg-fondo);
+    background-image: 
+        linear-gradient(rgba(240, 249, 255, 0.8), rgba(186, 230, 253, 0.6)), 
+        url('https://images.unsplash.com/photo-1550684376-efcbd6e3f031?q=80&w=2500&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--txt-medio);
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.5;
+}
+
+body.app-bg {
+    background-color: var(--bg-fondo) !important;
+    background-image: 
+        linear-gradient(rgba(240, 249, 255, 0.8), rgba(186, 230, 253, 0.6)), 
+        url('https://images.unsplash.com/photo-1550684376-efcbd6e3f031?q=80&w=2500&auto=format&fit=crop') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+}

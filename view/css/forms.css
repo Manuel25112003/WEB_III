@@ -1,0 +1,108 @@
+/*
+ * forms.css — Formularios y búsqueda
+ */
+
+.form-label-custom {
+    font-size: 0.85rem;
+    color: var(--txt-claro);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.search-row {
+    display: flex;
+    border: 1px solid var(--bg-borde);
+    background: var(--bg-fondo);
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    color: var(--txt-oscuro);
+    outline: none;
+}
+
+.search-input::placeholder { color: var(--txt-claro); opacity: 0.7; }
+
+.search-btn {
+    background: var(--bg-borde);
+    color: var(--txt-oscuro);
+    border: none;
+    padding: 0 2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search-btn:hover { background: var(--txt-claro); color: var(--bg-fondo); }
+.search-btn--naranja:hover { background: var(--naranja); color: var(--bg-fondo); }
+
+.tarjeta {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-borde);
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+.tarjeta-cabecera {
+    background: transparent;
+    border-bottom: 1px solid var(--bg-borde);
+    color: var(--txt-oscuro);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tarjeta-cabecera i { color: var(--txt-claro); font-size: 1.5rem; }
+.tarjeta-cabecera h1 { font-size: 1.2rem; font-weight: 500; margin: 0; }
+.tarjeta-cabecera .modo { display: none; }
+
+.tarjeta-cuerpo { padding: 2rem; }
+
+.campo-label {
+    font-size: 0.85rem;
+    color: var(--txt-medio);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.campo-input {
+    width: 100%;
+    background: var(--bg-fondo);
+    color: var(--txt-oscuro);
+    border: 1px solid var(--bg-borde);
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.2s;
+    border-radius: 4px;
+}
+
+.campo-input:focus { border-color: var(--txt-oscuro); }
+.campo-input.campo-error { border-color: var(--error-color) !important; }
+
+.campo-grupo { margin-bottom: 1.5rem; }
+
+.msg-error {
+    display: none;
+    color: var(--error-color);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+.msg-error.visible { display: block; }
+
+.resultado-info {
+    font-size: 0.9rem;
+    color: var(--txt-claro);
+    margin-bottom: 1rem;
+}
+.resultado-info strong { color: var(--txt-oscuro); }
