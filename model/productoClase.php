@@ -153,5 +153,67 @@ class Producto
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
         return $stmt->execute();
     }
+
+    // Devuelve el HTML completo del reporte (útil para generar PDFs)
+    public function reportePdf()
+    {
+        $rows = $this->listarProducto();
+        ob_start();
+        ?>
+        <style>
+            body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background: #f8fafc; }
+            .pagina { max-width: 1100px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 10px; }
+            table { width: 100%; border-collapse: collapse; }
+            th, td { padding: .6rem; border: 1px solid #e6eef6; text-align: left; }
+            thead th { background: #f1f5f9; font-weight: 600; }
+            .producto-img { width: 60px; height: 60px; object-fit: cover; border-radius: 6px; }
+            .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        </style>
+
+        <div class="pagina" id="reporte-contenido">
+            <div class="header">
+                <div>
+                    <h3 style="margin:0">Reporte de Productos</h3>
+                    <div style="color:#64748b;font-size:.9rem">Listado de productos</div>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th><th>Proveedor</th><th>Producto</th><th>Tipo</th>
+                        <th>Precio</th><th>Stock</th><th>Estado</th><th>Imagen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php if (!empty($rows)): foreach ($rows as $reg):
+                    $productoId = intval($reg['id'] ?? $reg['id_producto'] ?? 0);
+                ?>
+                    <tr>
+                        <td>#<?= $productoId ?></td>
+                        <td><?= htmlspecialchars($reg['proveedor']     ?? 'Sin proveedor', ENT_QUOTES) ?></td>
+                        <td><?= htmlspecialchars($reg['nombreproducto'] ?? '',              ENT_QUOTES) ?></td>
+                        <td><?= htmlspecialchars($reg['tipo']          ?? '',              ENT_QUOTES) ?></td>
+                        <td>Bs. <?= number_format($reg['precio'] ?? 0, 2, ',', '.') ?></td>
+                        <td><?= htmlspecialchars($reg['stock']  ?? 0, ENT_QUOTES) ?></td>
+                        <td><?= htmlspecialchars($reg['estado'] ?? '', ENT_QUOTES) ?></td>
+                        <td>
+                            <?php if (!empty($reg['imagen']) && file_exists(__DIR__ . '/../img/' . $reg['imagen'])): ?>
+                                <img src="../img/<?= htmlspecialchars($reg['imagen'], ENT_QUOTES) ?>" class="producto-img" alt="Imagen">
+                            <?php else: ?>
+                                <span style="color:#94a3b8">—</span>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                <?php endforeach; else: ?>
+                    <tr><td colspan="8" class="text-center text-muted py-3">No hay registros</td></tr>
+                <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+        <?php
+        $html = ob_get_clean();
+        return $html;
+    }
 }
 

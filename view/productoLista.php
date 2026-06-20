@@ -106,7 +106,7 @@
         .badge-precio { background: #c7d2fe; color: #3730a3; font-weight: 700; }
         .badge-stock { background: #d1fae5; color: #047857; font-weight: 700; }
 
-        .btn-nuevo, .btn-buscar, .btn-salir, .btn-editar, .btn-eliminar {
+        .btn-nuevo, .btn-buscar, .btn-salir, .btn-editar, .btn-eliminar, .btn-reporte {
             display: inline-flex;
             align-items: center;
             padding: 0.5rem 1rem;
@@ -127,6 +127,9 @@
 
         .btn-inactivos { background: #f59e0b; color: white; }
         .btn-inactivos:hover { background: #d97706; transform: translateY(-1px); }
+
+        .btn-reporte { background: #f59e0b; color: white; }
+        .btn-reporte:hover { background: #d97706; transform: translateY(-1px); }
 
         .btn-salir { background: #ef4444; color: white; }
         .btn-salir:hover { background: #dc2626; transform: translateY(-1px); }
@@ -158,6 +161,9 @@
         <div style="display:flex; gap:.6rem; align-items:center; flex-wrap: wrap;">
             <a href="../controller/productoRegistro.php" class="btn-nuevo">
                 <i class="bi bi-plus-circle-dotted me-1"></i>Nuevo Producto
+            </a>
+            <a href="../controller/productoReporte.php" class="btn-reporte">
+                <i class="bi bi-file-earmark-text me-1"></i>Reporte
             </a>
             <a href="../controller/productoBusqueda.php" class="btn-buscar">
                 <i class="bi bi-search me-1"></i>Buscar
@@ -252,6 +258,7 @@
         })
     }
 </script>
+<!-- El botón abre la página del reporte en una nueva pestaña -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -147,4 +147,43 @@ public function buscarEmpleado($dato)
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
         return $stmt->execute();
     }
+
+    // Devuelve HTML del reporte de empleados
+    public function reportePdf()
+    {
+        $rows = $this->listarEmpleado();
+        ob_start();
+        ?>
+        <style>
+            body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background: #f8fafc; }
+            .pagina { max-width: 1100px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 10px; }
+            table { width: 100%; border-collapse: collapse; }
+            th, td { padding: .6rem; border: 1px solid #e6eef6; text-align: left; }
+            thead th { background: #f1f5f9; font-weight: 600; }
+        </style>
+        <div class="pagina" id="reporte-contenido">
+            <h3 style="margin:0">Reporte de Empleados</h3>
+            <div style="color:#64748b;font-size:.9rem;margin-bottom:8px;">Listado de empleados</div>
+            <table>
+                <thead>
+                    <tr><th>ID</th><th>CI</th><th>Nombre</th><th>Cargo</th><th>Teléfono</th></tr>
+                </thead>
+                <tbody>
+                <?php if (!empty($rows)): foreach ($rows as $r): ?>
+                    <tr>
+                        <td>#<?= htmlspecialchars($r['id_empleado'] ?? '', ENT_QUOTES) ?></td>
+                        <td><?= htmlspecialchars($r['ci'] ?? '', ENT_QUOTES) ?></td>
+                        <td><?= htmlspecialchars(($r['nombre'] ?? '') . ' ' . ($r['paterno'] ?? ''), ENT_QUOTES) ?></td>
+                        <td><?= htmlspecialchars($r['cargo'] ?? '', ENT_QUOTES) ?></td>
+                        <td><?= htmlspecialchars($r['telefono'] ?? '', ENT_QUOTES) ?></td>
+                    </tr>
+                <?php endforeach; else: ?>
+                    <tr><td colspan="5" class="text-center text-muted py-3">No hay registros</td></tr>
+                <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+        <?php
+        return ob_get_clean();
+    }
 }

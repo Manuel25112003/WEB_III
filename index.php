@@ -321,6 +321,10 @@
                     <i class="bi bi-cart-check"></i> Productos Activos
                     <i class="bi bi-chevron-right link-flecha"></i>
                 </a>
+                <a href="controller/productoCatalogo.php" class="entidad-link">
+                    <i class="bi bi-window-sidebar"></i> Catálogo de Productos
+                    <i class="bi bi-chevron-right link-flecha"></i>
+                </a>
                 <a href="controller/productoListaInactivos.php" class="entidad-link">
                     <i class="bi bi-cart-x"></i> Productos Inactivos
                     <i class="bi bi-chevron-right link-flecha"></i>

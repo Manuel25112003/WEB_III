@@ -109,7 +109,7 @@
         .etiqueta { background: #e0f2fe; color: #0284c7; padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
         
         /* Ajuste de botones para cuando no carguen los CSS externos */
-        .btn-nuevo, .btn-buscar, .btn-salir, .btn-editar, .btn-eliminar {
+        .btn-nuevo, .btn-buscar, .btn-salir, .btn-editar, .btn-eliminar, .btn-reporte {
             display: inline-flex; align-items: center; padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: all 0.2s; border: none;
         }
         .btn-nuevo { background: #10b981; color: white; }
@@ -117,6 +117,9 @@
         
         .btn-buscar { background: #0ea5e9; color: white; }
         .btn-buscar:hover { background: #0284c7; color: white; transform: translateY(-1px); }
+
+        .btn-reporte { background: #f59e0b; color: white; }
+        .btn-reporte:hover { background: #d97706; color: white; transform: translateY(-1px); }
         
         .btn-salir { background: #ef4444; color: white; }
         .btn-salir:hover { background: #dc2626; color: white; transform: translateY(-1px); }
@@ -147,6 +150,9 @@
         <div style="display:flex; gap:.6rem; align-items:center; flex-wrap: wrap;">
             <a href="../controller/empleadoRegistroCo.php" class="btn-nuevo">
                 <i class="bi bi-person-plus-fill me-1"></i>Nuevo Empleado
+            </a>
+            <a href="../controller/empleadoReporte.php" target="_blank" class="btn-reporte">
+                <i class="bi bi-file-earmark-text me-1"></i>Reporte
             </a>
             <a href="../controller/empleadoBusqueda.php" class="btn-buscar">
                 <i class="bi bi-search me-1"></i>Buscar

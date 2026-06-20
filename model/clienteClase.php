@@ -100,6 +100,44 @@ class Cliente
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // Devuelve HTML del reporte de clientes (con estilos inline)
+    public function reportePdf()
+    {
+        $rows = $this->listarCliente();
+        ob_start();
+        ?>
+        <style>
+            body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background: #f8fafc; }
+            .pagina { max-width: 900px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 10px; }
+            table { width: 100%; border-collapse: collapse; }
+            th, td { padding: .6rem; border: 1px solid #e6eef6; text-align: left; }
+            thead th { background: #f1f5f9; font-weight: 600; }
+            .header { margin-bottom: 1rem; }
+        </style>
+        <div class="pagina" id="reporte-contenido">
+            <div class="header">
+                <h3 style="margin:0">Reporte de Clientes</h3>
+                <div style="color:#64748b;font-size:.9rem">Listado de clientes</div>
+            </div>
+            <table>
+                <thead><tr><th>ID</th><th>NIT/CI</th><th>Razón Social</th></th></tr></thead>
+                <tbody>
+                <?php if (!empty($rows)): foreach ($rows as $r): ?>
+                    <tr>
+                        <td>#<?= htmlspecialchars($r['id_cliente'] ?? '', ENT_QUOTES) ?></td>
+                        <td><?= htmlspecialchars($r['nit_ci'] ?? '', ENT_QUOTES) ?></td>
+                        <td><?= htmlspecialchars($r['razonsocial'] ?? '', ENT_QUOTES) ?></td>
+                    </tr>
+                <?php endforeach; else: ?>
+                    <tr><td colspan="3" class="text-center text-muted py-3">No hay registros</td></tr>
+                <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+        <?php
+        return ob_get_clean();
+    }
+
     // Getters y setters
     public function setId($id)
     {
